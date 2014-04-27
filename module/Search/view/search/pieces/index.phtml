@@ -1,0 +1,47 @@
+<?php
+  /**
+   * Affichage de la liste des éléments trouvés lors de la recherche.
+   * Par défaut, les dernières pièces saisies.
+   * 
+   * @author CONRAD Pascal
+   * @version 1.0 14/04/2014
+   */ 
+?>
+<?php if ($this->needSearchBar) :?>
+<div id='searchBlock'>
+<label><?php echo $this->translate('lbl_region','search'); ?></label><select name='searchRegionId'>
+<option value='0'>Toutes</option>
+<?php foreach ($this->reg as $r) :?>
+<option value='<?php echo $r['id'];?>'><?php echo $r['Description']; ?></option>
+<?php endforeach;?>
+</select>
+<label><?php echo $this->translate('lbl_marque','search'); ?></label><select name='searchBrandId'>
+<option value='0'>Toutes</option>
+<?php foreach ($this->brand as $r) :?>
+<option value='<?php echo $r['id'];?>'><?php echo $r['Description']; ?></option>
+<?php endforeach;?>
+</select><br>
+<label><?php echo $this->translate('lbl_apt','search'); ?></label><select name='searchAptId'>
+<option value='0'>Toutes</option>
+<?php foreach ($this->apt as $r) :?>
+<option value='<?php echo $r['id'];?>'><?php echo $r['Description']; ?></option>
+<?php endforeach;?>
+</select>
+<label><?php echo $this->translate('lbl_pct','search'); ?></label><select name='searchPctId'>
+<option value='0'>Toutes</option>
+<?php foreach ($this->pct as $r) :?>
+<option value='<?php echo $r['id'];?>'><?php echo $r['Description']; ?></option>
+<?php endforeach;?>
+</select>
+<?php endif;?>
+<a id='btSearch' href='<?php echo $this->url('search/list');?>' title='<?php echo $this->translate('ttl_go_search','search'); ?>'><?php echo $this->translate('recherche','search')?></a>
+</div>
+<!-- Table des pièces disponible pour la recherche -->
+<div id='dataBlock'>
+<table>
+<tr><th><?php echo $this->translate('th_marque','search');?></th><th><?php echo $this->translate('th_appareil','search'); ?></th><th><?php echo $this->translate('th_piece','search'); ?></th></tr>
+<?php foreach ($this->pieces as $pcs) : ?>
+<tr><td><a href='<?php echo $this->url('search/view',array('id' => $pcs->id));?>'><?php echo $pcs->Brand->Description; ?></a></td><td><?php echo $pcs->ApplianceType->Description; ?></td><td><?php echo $pcs->PieceType->Description; ?></td></tr>
+<?php endforeach;?>
+</table>
+</div>

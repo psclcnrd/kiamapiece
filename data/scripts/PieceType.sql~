@@ -1,0 +1,13 @@
+insert into PieceType values (default,0,'Pompe à eau');
+insert into PieceType values (default,0,'Tambour');
+insert into PieceType values (default,0,'Programmateur');
+insert into PieceType values (default,0,'Moteur');
+insert into PieceType values (default,0,'Réducteur');
+insert into PieceType values (default,0,'Carter');
+insert into PieceType values (default,0,'Hublot');
+insert into PieceType values (default,0,'Amortisseur');
+insert into PieceType values (default,0,'Sonde');
+insert into PieceType values (default,0,'Bouton');
+insert into PieceType values (default,0,'Sélecteur');
+insert into PieceType values (default,0,'Relais');
+insert into PieceType values (default,0,'Transformateur');

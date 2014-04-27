@@ -1,0 +1,25 @@
+<?php
+
+use Search\Models\Region;
+use Search\Models\Brand;
+use Search\Models\ApplianceType;
+use Search\Models\PieceType;
+
+use Zend\Form\Element;
+
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\Query;
+use Zend\Form\Element\Select;
+
+$em=$this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
+
+$qb=$em->createQueryBuilder();
+$qb->select('r')->from('Search\Models\Region','r')->orderBy("r.Description");
+$query=$qb->getQuery();
+$reg=$query->getArrayResult();
+?>
+<select name='searchRegionId'>
+<?php foreach ($reg as $r) :?>
+<option value='<?php echo $r->Id;?>'><?php echo $r->Description; ?></option>
+<?php endforeach;?>
+</select>

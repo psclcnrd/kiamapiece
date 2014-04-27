@@ -1,0 +1,28 @@
+insert into Region values(default,"Alsace");
+insert into Region values(default,"Aquitaine");
+insert into Region values(default,"Auvergne");
+insert into Region values(default,"Bourgogne");
+insert into Region values(default,"Bretagne");
+insert into Region values(default,"Centre");
+insert into Region values(default,"Champagne Ardenne");
+insert into Region values(default,"Corse");
+insert into Region values(default,"Franche Comté");
+insert into Region values(default,"Guadeloupe");
+insert into Region values(default,"Guyanne");
+insert into Region values(default,"Ile de France");
+insert into Region values(default,"Languedoc Roussillon");
+insert into Region values(default,"Limousin");
+insert into Region values(default,"Lorraine");
+insert into Region values(default,"Martinique");
+insert into Region values(default,"Mayotte");
+insert into Region values(default,"Midi Pyrénées");
+insert into Region values(default,"Nord Pas de Calais");
+insert into Region values(default,"Basse Normandie");
+insert into Region values(default,"Haute Normandie");
+insert into Region values(default,"Pays de Loire");
+insert into Region values(default,"Picardie");
+insert into Region values(default,"Poitou Charentes");
+insert into Region values(default,"Provence Alpes Côte d''Azur");
+insert into Region values(default,"Réunion");
+insert into Region values(default,"Rhône Alpes");
+
