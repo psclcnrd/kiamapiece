@@ -8,3 +8,9 @@ nbproject
 .settings
 composer.lock
 vendor/bin
+data/DoctrineORMModule/
+data/logs/
+public/css/jquery-ui.css
+public/img/favicon-old.ico
+public/js/jquery-ui.js
+public/js/jquery.js

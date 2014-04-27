@@ -29,7 +29,7 @@ class ApplianceType {
 	 */
 	protected $id;
 	
-	/** @ORM\Column(Name="Description",type="String",length=120) */
+	/** @ORM\Column(name="Description",type="string",length=120) */
 	protected $Description;
 	
 	/**
