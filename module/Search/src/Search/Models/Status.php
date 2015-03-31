@@ -25,10 +25,11 @@ class Status {
 	/**
 	 * @ORM\Id
 	 * @ORM\Column(name="Id",type="bigint")
+	 * @ORM\GeneratedValue(strategy="AUTO")
 	 */
 	protected $id;
 	
-	/** @ORM\Column(name="Description",type="String",length=120) */
+	/** @ORM\Column(name="Description",type="string",length=120) */
 	protected $Description;
 	
 	/**

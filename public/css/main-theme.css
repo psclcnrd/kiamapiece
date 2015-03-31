@@ -1,18 +1,15 @@
 @CHARSET "UTF-8";
 
 @import url(http://fonts.googleapis.com/css?family=Lobster);
-
-#loginBox {
-	padding : 5px;
-    border-radius : 4px;
-	border : thin solid #6194df;
-	background-color: #e9f0fa;
-}
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:700italic,400,300);
 
 /*
  * Définition des éléments du DOM de l'interface générale 
  */
  
+/* div.container {
+	background-color: #bccbe0;
+}*/
 
 select {
 	border-style : hidden;
@@ -24,6 +21,17 @@ input[type="text"] {
 	border-style : hidden;
 	border-radius : 4px;
 	background-color: #e9f0fa;
+}
+
+hr {
+    background: #333;
+    background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc); 
+    background-image:    -moz-linear-gradient(left, #ccc, #333, #ccc); 
+    background-image:     -ms-linear-gradient(left, #ccc, #333, #ccc); 
+    background-image:      -o-linear-gradient(left, #ccc, #333, #ccc); 
+	margin-top : 4px;
+	margin-bottom : 4px;
+	height: 1px;
 }
 
 table {
@@ -44,10 +52,73 @@ tr::LAST-CHILD {
 	border-top-right-radius : 4px;
 }
 
+tr.workInProgress td {
+	font-weight: bold;
+	background-color: #cad6e6;
+}
+
 td {
 	border-left: thin solid black;
 }
 
+div.editor {
+	background-color : #cad6e6;
+}
+div.infoMessageTo {
+	background-color: #cad6e6;
+	border : thin solid  #5479af;
+	border-radius : 4px;
+	padding : 4px;
+	margin-bottom : 5px;
+	font-size : 11pt;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight : 700;	
+}
+
+div.messageView {
+	border : thin solid #6194df;
+	width : 100%;
+	height : 400px;
+	overflow : scroll; 
+}
+
+/* Block d'erreur */
+div.errorBlock {
+	font-family: 'Lobster', 'cursive';
+	font-size : 14pt;
+	background-color: #d8e5f7;
+	border-radius : 4px;
+	border : thin solid #6194df;
+	margin-top : 20px;
+	padding : 10px;
+	text-align : center;
+}
+
+p.validateUser {
+	margin-top : 64px;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size : 14pt;
+	font-weight :400;
+	padding-left: 32px;
+	padding-right: 32px;
+}
+
+div.errorBlock h2 {
+	font-size : 16pt;
+}
+
+div.errorBlock h3 {
+	font-size : 14pt;
+}
+
+pre.errorLine {
+	font-family : 'courier';
+	font-size : 10pt;
+}
+
+#headerBlock div {
+	vertical-align: middle;
+}
 /*
  * Définition des blocks particulier de l'application
  */
@@ -72,6 +143,19 @@ td {
 	margin-bottom : 8px;
 }
 
+#errorLogin {
+	display : none;
+	position: absolute;
+	top : 15px;
+	width : 200px;
+	background-color : red;
+	padding : 4px;
+	text-align : center;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight : 700;
+	font-size : 11pt;
+}
+
 #menuBlock {
     background-image: url("../img/fond1.jpg");
     background-repeat: repeat;
@@ -82,7 +166,7 @@ td {
 }
 #menuBlock li {
 	list-style: none;
-	font-size : 12pt;
+	font-size : 13pt;
 	cursor: pointer;
 	font-family: 'Lobster', 'cursive';
  }
@@ -93,10 +177,58 @@ td {
 	border : thin solid #6194df;
 }
 
-#infoLogin {
-	font-size : 12pt;
+#footerBlock {
+	position : fixed;
+	bottom : 2px;
+	background-color : #6194df;
+	font-size : 10pt;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight : 700;
+	text-align : center;
+	border-radius : 4px;
+	border : thin solid #6194df;
+	box-shadow : 0px 0px 10px black;
 }
 
+div.overflowHeader {
+	position : fixed;
+	top : 0px;
+	height : 48px;
+	width : 960px;
+	background-color : #6194df;
+	font-size : 14pt;
+	font-family: 'Lobster', 'cursive';
+	color :white;
+	font-weight : 700;
+	border-bottom-left-radius : 4px;
+	border-bottom-right-radius : 4px;
+	border : thin solid #6194df;
+	box-shadow : 0px 0px 10px black;
+	vertical-align: middle;
+	text-shadow : 2px 2px 6px black;
+}
+
+div.overflowHeader span {
+	vertical-align: middle;
+	display : inline-block;
+}
+
+/* Zone de login */
+#loginBox {
+	padding : 5px;
+    border-radius : 4px;
+	border : thin solid #6194df;
+	background-color: #e9f0fa;
+	text-align: center;
+}
+
+#infoLogin {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size : 10pt;
+	font-weight :400;
+}
+
+/* Zone de saisie */
 #Search_View {
 	border-radius : 4px;
 	border : thin solid #6194df;
@@ -105,10 +237,162 @@ td {
 
 span.iLabel {
 	font-weight: bold;
+	font-size : 10pt;
 	margin-left: 4px;
+	width : 120px;
+	text-align : right;
+	display : inline-block;
+	vertical-align: middle;
 }
 
 span.iText {
-	border-radius : 2px;
+	padding : 2px;
+	width : 300px;
+	display : inline-block;
+	background-color: #cad6e6;
+	margin-left : 4px;
+	font-size : 10pt;
+}
+
+span.iTextarea {
+	padding : 2px;
+	width : 500px;
+	display : inline-block;
+	background-color: #cad6e6;
+	margin-left : 4px;
+	font-size : 10pt;
+	height : 200px;
+	overflow: scroll;
+}
+
+div.iRow {
+	width : 100%;
+	display : block;
+	vertical-align: middle;
+}
+
+span.iInput {
+	display : inline-block;
+	vertical-align: middle;
+}
+
+span.iError {
+   color : red;
+   display : table-cell;
+   overflow : hidden;
+}
+
+div.AddressBlock {
+	font-weight: bold;
+	font-size : 10pt;
+	border-radius : 4px;
 	border : thin solid #6194df;
+	padding : 4px;
+	margin-bottom: 4px;	
+}
+
+div.formUser {
+	border-radius : 4px;
+	border : thin solid #6194df;
+	padding : 4px;
+	margin-bottom: 4px;	
+}
+
+/* boutons */
+span.btDelete {
+	content : url('../img/trash_24.png');
+	display : inline-block;
+	cursor: pointer;
+	margin-right: 4px;
+}
+
+span.btEdit {
+	content : url('../img/new_24.png');
+	display : inline-block;
+	cursor: pointer;
+}
+
+span.btReceive {
+	content : url('../img/paste_24.png');
+	display : inline-block;
+	cursor: pointer;
+}
+
+span.btMessage {
+	content : url('../img/insert_24.png');
+	display : inline-block;
+	cursor: pointer;
+}
+
+div.userPieces tr td {
+	border : thin solid #6194df;
+}
+
+div.userPieces tr:HOVER {
+	background-color: red;
+}
+
+a.pageType {
+  	background-color: #6194df;
+  	text-decoration: none;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size : 10pt;
+	border-radius:2px;
+	margin-left :2px;
+	padding  : 2px;
+	border : thin solid #6194df;
+}
+
+a.pageTypeSelected {
+	background-color: red;
+	color :white;
+}
+
+a.pageType:HOVER {
+	border : thin solid #6194df;
+	background-color: #d8e5f7;
+}
+/**
+ * Type bouton
+ */
+a.buttonType {
+	background-color : white;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size : 10pt;
+	font-weight :400;
+	padding-top : 2px;
+	padding-bottom : 2px;
+	padding-left : 8px;
+	padding-right : 8px;
+	margin-left : 5px;
+	border-radius : 4px;
+	border : thin solid #6194df;
+	text-decoration: none;
+	cursor: pointer;
+	display : inline-block;
+	color : black;
+	margin-top : 4px;
+	margin-bottom : 4px;
+}
+
+a.buttonType:HOVER {
+	background-color: #6194df;
+	color : white;
+}
+
+/*
+  Mentions
+  */
+p.mention_title {
+	font-family: 'Roboto Condensed', sans-serif;
+	background-color: #6194df;
+	color : white;
+}
+
+div.mention_infos_legales {
+	border-radius : 4px;
+	border : thin solid #6194df;
+	background-color: #e3c3de;
+	margin : 8px;
+	padding : 4px;
 }

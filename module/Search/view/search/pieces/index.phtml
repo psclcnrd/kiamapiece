@@ -12,36 +12,52 @@
 <label><?php echo $this->translate('lbl_region','search'); ?></label><select name='searchRegionId'>
 <option value='0'>Toutes</option>
 <?php foreach ($this->reg as $r) :?>
-<option value='<?php echo $r['id'];?>'><?php echo $r['Description']; ?></option>
+<option value='<?php echo $r['id'];?>'<?php if (($this->activeSearch=='criteria') && ($r['id']==$this->criteria['searchRegionId'])) echo ' selected'?>><?php echo $r['Description']; ?></option>
 <?php endforeach;?>
 </select>
 <label><?php echo $this->translate('lbl_marque','search'); ?></label><select name='searchBrandId'>
 <option value='0'>Toutes</option>
 <?php foreach ($this->brand as $r) :?>
-<option value='<?php echo $r['id'];?>'><?php echo $r['Description']; ?></option>
+<option value='<?php echo $r['id'];?>'<?php if (($this->activeSearch=='criteria') && ($r['id']==$this->criteria['searchBrandId'])) echo ' selected'?>><?php echo $r['Description']; ?></option>
 <?php endforeach;?>
 </select><br>
 <label><?php echo $this->translate('lbl_apt','search'); ?></label><select name='searchAptId'>
 <option value='0'>Toutes</option>
 <?php foreach ($this->apt as $r) :?>
-<option value='<?php echo $r['id'];?>'><?php echo $r['Description']; ?></option>
+<option value='<?php echo $r['id'];?><?php if (($this->activeSearch=='criteria') && ($r['id']==$this->criteria['searchAptId'])) echo ' selected'?>'><?php echo $r['Description']; ?></option>
 <?php endforeach;?>
 </select>
 <label><?php echo $this->translate('lbl_pct','search'); ?></label><select name='searchPctId'>
 <option value='0'>Toutes</option>
 <?php foreach ($this->pct as $r) :?>
-<option value='<?php echo $r['id'];?>'><?php echo $r['Description']; ?></option>
+<option value='<?php echo $r['id'];?>'<?php if (($this->activeSearch=='criteria') && ($r['id']==$this->criteria['searchPctId'])) echo ' selected'?>><?php echo $r['Description']; ?></option>
 <?php endforeach;?>
 </select>
 <?php endif;?>
-<a id='btSearch' href='<?php echo $this->url('search/list');?>' title='<?php echo $this->translate('ttl_go_search','search'); ?>'><?php echo $this->translate('recherche','search')?></a>
+<a id='btSearch' href='#' title='<?php echo $this->translate('ttl_go_search','search'); ?>'><?php echo $this->translate('recherche','search')?></a>
 </div>
 <!-- Table des pièces disponible pour la recherche -->
 <div id='dataBlock'>
 <table>
 <tr><th><?php echo $this->translate('th_marque','search');?></th><th><?php echo $this->translate('th_appareil','search'); ?></th><th><?php echo $this->translate('th_piece','search'); ?></th></tr>
 <?php foreach ($this->pieces as $pcs) : ?>
-<tr><td><a href='<?php echo $this->url('search/view',array('id' => $pcs->id));?>'><?php echo $pcs->Brand->Description; ?></a></td><td><?php echo $pcs->ApplianceType->Description; ?></td><td><?php echo $pcs->PieceType->Description; ?></td></tr>
+<tr><td><a href='<?php echo $this->url('pieces/view',array('id' => $pcs->getId()));?>'><?php echo $pcs->getBrand()->Description; ?></a></td><td><?php echo $pcs->getApplianceType()->Description; ?></td><td><?php echo $pcs->getPieceType()->Description; ?></td></tr>
 <?php endforeach;?>
 </table>
+<?php
+    if ($this->maxPage<10) $beginPage=1;else {
+      if ($this->page<8) $beginPage=1;else $beginPage=$this->page-7;
+      if ($beginPage+10>$this->maxPage) $beginPage=$this->maxPage-9;
+    }
+    if ($this->maxPage<10) $endPage=$this->maxPage;else $endPage=$beginPage+9;
+	if ($beginPage>1) echo "<a class='pageType' href='".$this->basePath()."/search/nav/".($this->page-1)."' title='".$this->translate('search_go_previous','search')."'>".$this->translate('search_go_prev','search')."</a>";
+	if ($this->page+10<$this->maxPage) $nbP=10;else $nbP=($this->maxPage-$this->page)+1;
+	$page=$beginPage;
+	for($i=$beginPage;$i<=$endPage;$i++) {
+		if ($i==$this->page) $class='pageType pageTypeSelected';else $class='pageType';
+		echo "<a class='$class' href='".$this->basePath()."/search/nav/$page' title='".$this->translate('search_go_page','search')." $page'>$page</a>";
+		$page++;
+	}
+	if ($page<$this->maxPage) echo "<a class='pageType' href='".$this->basePath()."/search/nav/$page' title='".$this->translate('search_go_next','search')."'>".$this->translate('search_go_ne','search')."</a>";
+?>
 </div>

@@ -19,10 +19,15 @@ $this->headLink()->headLink(array('rel' => 'shortcut icon','type' => 'image/vnd.
                  ->prependStylesheet($this->basePath().'/css/jquery-ui.css');
 $this->headScript()->appendFile($this->basepath().'/js/jquery.js')
                    ->appendFile($this->basepath().'/js/jquery-ui.js')
-                   ->appendFile($this->basepath().'/js/main_function.js');
+                   ->appendFile($this->basepath().'/js/main_function.js')
+				   ->appendFile($this->basepath().'/js/tinymce/tinymce.min.js');
 $this->headmeta()->setCharset('UTF-8');
 $this->headmeta()->appendHttpEquiv('pragma','no-cache')
-                 ->appendHttpEquiv('Content-Language','fr_FR');
+                 ->appendHttpEquiv('Content-Language','fr_FR')
+				 ->appendHttpEquiv("Description",$this->translate('meta_description','search'))
+				 ->appendHttpEquiv("Author","Pascal CONRAD")
+				 ->appendHttpEquiv("Robots","all")
+				 ->appendHttpEquiv("Keywords",$this->translate('meta_keywords','search'));
 
 echo $this->headmeta();
 echo $this->headLink();
@@ -32,10 +37,28 @@ echo $this->headScript();
 </head>
 <body>
 <div class='container'>
+<?php if ($this->buildType=='normal') :?>
  <?php echo $this->appHeader; ?>
  <div class='span-6'><?php echo $this->appMenu; ?></div>
- <div class='span-18 last'><?php echo $this->content; ?></div>
+ <div class='span-18 last'>
+ <?php if (getenv("APPLICATION_MODE")===false) :?>
+ <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+ <!-- adsense01 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-8071457511950330"
+     data-ad-slot="4969582408"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<?php endif;?>
+ <?php echo $this->content; ?>
+ </div>
  <?php echo $this->appFooter; ?>
+ <?php else :?>
+ <div class='span-24 last'><?php echo $this->content; ?></div>
+ <?php endif;?>
+ <div class='overflowHeader'><span><img src='<?php echo $this->basePath().'/img/logo-site-mini.png';?>' title='kiamapiece'></span><span>kiamapiece.fr - Trouver la pièce qu'il vous faut.</span></div>
 </div>
 </body>
 </html>

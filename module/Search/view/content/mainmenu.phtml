@@ -1,8 +1,22 @@
+<?php
+  use Zend\Authentication\AuthenticationService;
+  use Zend\Authentication\Result;
+  use Zend\Authentication\Storage\Session as SessionStorage;
+
+  $auth=new AuthenticationService();
+  $auth->setStorage(new SessionStorage("kmpv1"));
+?>
 <div id='menuBlock'>
 <ul class='menuNav'>
-  <li><?php echo $this->translate('menuSearch','search'); ?></li>
-  <li><?php echo $this->translate('MenuDeposit','search'); ?></li>
-  <li><?php echo $this->translate('menuMe','search'); ?></li>
-  <li><?php echo $this->translate('menuContactMe','search'); ?></li>
+  <li><span class='menuLink' data-href='/search'><?php echo $this->translate('menuSearch','search'); ?></span></li>
+  <?php if ($auth->hasIdentity()) :?>
+    <li><span class='menuLink' data-href='/pieces/add'><?php echo $this->translate('MenuDeposit','search'); ?></span></li>
+    <li><span class='menuLink' data-href='/user/view'><?php echo $this->translate('menuMe','search'); ?></span></li>
+    <li><span class='menuLink' data-href='/message/list'><?php echo $this->translate('myMessage','search'); ?></span></li>
+    <li><span class='menuLink' data-href='/contact'><?php echo $this->translate('menuContactMe','search'); ?></span></li>
+  <?php  else : ?>
+    <li><span class='menuLink' data-href='/user/add'><?php echo $this->translate('menuAddUser','search'); ?></span></li>
+    <li><span class='menuLink' data-href='/contactfree'><?php echo $this->translate('menuContactMe','search'); ?></span></li>
+  <?php endif;?>
 </ul>
 </div>

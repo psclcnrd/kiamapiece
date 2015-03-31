@@ -38,8 +38,11 @@ class Request {
 	/** @ORM\Column(type="datetime") */
 	protected $DateRequest;
 	
-	/** @ORM\Column(type="bigint") */
-	protected $PieceId;
+	/**
+	 *  @ORM\OneToOne(targetEntity="Pieces")
+	 *  @ORM\JoinColumn(name="PieceId",referencedColumnName="Id")
+	 */
+	protected $Piece;
 	
 	/**
 	 * Constructeur de classe
@@ -49,21 +52,122 @@ class Request {
 	}
 
 	/**
-	 * Magic setter !
-	 * @param string $property
-	 * @param any $value
+	 * Set $id value
+	 * @param integer $id
+	 * @return Request
 	 */
-	public function __set($property,$value) {
-		$this->$property=$value;
+	public function setId($id) {
+	  $this->id=$id;
+	  return $this;
 	}
-
+	 
 	/**
-	 * Magic getter !
-	 * @param string $property
+	 * get $id value
+	 * @return integer
 	 */
-	public function __get($property) {
-		return $this->$property;
+	public function getId() {
+	  return $this->id;
 	}
+	
+	/**
+	 * Set $UserDepositaryId value
+	 * @param integer $UserDepositaryId
+	 * @return Request
+	 */
+	public function setUserDepositaryId($UserDepositaryId) {
+	  $this->UserDepositaryId=$UserDepositaryId;
+	  return $this;
+	}
+	 
+	/**
+	 * get $UserDepositaryId value
+	 * @return integer
+	 */
+	public function getUserDepositaryId() {
+	  return $this->UserDepositaryId;
+	}
+	  
+	/**
+	 * Set $UserApplicantId value
+	 * @param integer $UserApplicantId
+	 * @return Request
+	 */
+	public function setUserApplicantId($UserApplicantId) {
+	  $this->UserApplicantId=$UserApplicantId;
+	  return $this;
+	}
+	 
+	/**
+	 * get $UserApplicantId value
+	 * @return integer
+	 */
+	public function getUserApplicantId() {
+	  return $this->UserApplicantId;
+	}
+	
+	/**
+	 * Set $DateRequest value
+	 * @param Datetime $DateRequest
+	 * @return Request
+	 */
+	public function setDateRequest($DateRequest) {
+	  $this->DateRequest=$DateRequest;
+	  return $this;
+	}
+	 
+	/**
+	 * get $DateRequest value
+	 * @return Datetime
+	 */
+	public function getDateRequest() {
+	  return $this->DateRequest;
+	}
+	
+	/**
+	 * Set $Piece value
+	 * @param integer $Piece
+	 * @return Request
+	 */
+	public function setPiece($Piece) {
+	  $this->Piece=$Piece;
+	  return $this;
+	}
+	 
+	/**
+	 * get $PieceId value
+	 * @return integer
+	 */
+	public function getPiece() {
+	  return $this->Piece;
+	}
+	
+	/**
+	 * Convertie l'objet en tableau associatif
+	 * @return array
+	 */
+	public function getArrayCopy() {
+		$data=array();
+		$data['id']=$this->id;
+		$data['UserDepositaryId']=$this->UserDepositaryId;
+		$data['UserApplicantId']=$ths->UserApplicantId;
+		$data['DateRequest']=$this->DateRequest;
+		$data['Piece']=$this->Piece;
+		return $data;
+	}
+	  
+	/**
+	 * Echange un tableau associatif avec les données de classe
+	 * Note : les valeurs non affectés dans le tableau ne mettent pas à null les valeurs
+	 * @param array $data
+	 */
+	public function exchangeArray(array $data) {
+		if (isset($data['id'])) $this->id=$data['id'];
+		if (isset($data['UserDepositaryId'])) $this->UserDepositaryId=$data['UserDepositaryId'];
+		if (isset($data['UserApplicantId'])) $this->UserApplicantId=$data['UserApplicantId'];
+		if (isset($data['DateRequest'])) $this->DateRequest=$data['DateRequest'];
+		if (isset($data['Piece'])) $this->Piece=$data['Piece'];
+	}
+	  
 }
 
 ?>

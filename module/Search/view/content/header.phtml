@@ -1,16 +1,22 @@
-<div id='headerBlock' class='span-18'>
-<img src='<?php echo $this->basepath('img/kiamapiece.png')?>' title='kiamapiece'>
+<div id='headerBlock'>
+<div id='headerLogo'  class='span-18' style='vertical-align : middle'>
+<img src='<?php echo $this->basepath('img/kiamapiece.png')?>' title='kiamapiece' width='720px'>
 </div>
-<div class='span-6 last'>
-<div id='loginBox'>
-<div id='connectBox'>
-<label>email :</label><input type="text" name='loginEmail' value=''><br>
-<label><?php echo $this->translate('logPassword','search'); ?></label><input type="text" name='loginPassword' value='' size="10"><br>
-<a href='#' id='btLogin'><?php echo $this->translate('connect','search')?></a>
+<div class='span-6 last' style='vertical-align : middle'>
+<!-- Boite de login -->
+<div id='loginBox' style='vertical-align : middle'>
+	<div id='connectBox' <?php if ($this->auth) echo "style='display : none'"?>>
+		<label>email :</label><input type="text" name='loginEmail' value=''><br>
+		<label><?php echo $this->translate('logPassword','search'); ?></label><input type="password" name='loginPassword' value='' size="10"><br>
+		<a href='#' id='btLogin'><?php echo $this->translate('connect','search')?></a><a href='<?php echo $this->basePath().'user/lostpwd'; ?>' title='<?php echo $this->translate('MsgLostPassword','search');?>'><?php echo $this->translate('lostPassword','search');?></a>
+		<div id='errorLogin'>Erreur !</div>
+		</div>
+		<div id='infoLogin' <?php if (!$this->auth) echo "style='display : none'"?>>
+			Bonjour <span id='theName'><?php echo $this->identity; ?></span><br>
+			<a href='<?php echo $this->basePath().'/user/logout'?>' id='btLogout'><?php echo $this->translate('disconnect','search')?></a>
+		</div>
+	</div>
 </div>
-<div id='infoLogin' style='display : none'>Bonjour<br></div>
-</div>
-</div>
-<div class='span-24'>
-<div id='leitmotivBlock' ><?php echo $this->translate('leitmotiv','search'); ?></div>
+<!-- Leitmotiv -->
+<div id='leitmotivBlock' class='span-24'><?php echo $this->translate('leitmotiv','search'); ?></div>
 </div>

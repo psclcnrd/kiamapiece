@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Projet kiamapiece, module Search\n"
-"POT-Creation-Date: 2014-04-26 21:37+0100\n"
-"PO-Revision-Date: 2014-04-26 21:37+0100\n"
+"POT-Creation-Date: 2015-03-31 18:44+0100\n"
+"PO-Revision-Date: 2015-03-31 18:45+0100\n"
 "Last-Translator: Pascal CONRAD <pascal.conrad@gmail.com>\n"
 "Language-Team: \n"
 "Language: French\n"
@@ -16,6 +16,46 @@ msgstr ""
 "X-Poedit-SearchPath-0: /home/pascal/public_html/zf2biz/kiamapiece/module/"
 "Search\n"
 "X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPath-2: /home/pascal/public_html/zf2biz/kiamapiece/module/"
+"Piece\n"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/src/Piece/Controller/PieceController.php:81
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/src/Piece/Controller/PieceController.php:117
+msgid "error_NoIdent"
+msgstr "Bizarre, identifiant non trouvé !"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/src/Piece/Controller/PieceController.php:84
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/src/Piece/Controller/PieceController.php:121
+msgid "error_NoAtYou"
+msgstr "Bizarre, la pièce ne vous appartient pas !"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/src/Piece/Form/PiecesForm.php:35
+msgid "Edit_Address"
+msgstr "Adresse :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/src/Piece/Form/PiecesForm.php:49
+msgid "Edit_Constructor"
+msgstr "Constructeur :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/src/Piece/Form/PiecesForm.php:62
+msgid "Edit_Appliance_Type"
+msgstr "Type d'appareil :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/src/Piece/Form/PiecesForm.php:75
+msgid "Edit_PieceType"
+msgstr "Type de pièce :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/src/Piece/Form/PiecesForm.php:89
+msgid "Edit_Sending_Mode"
+msgstr "Mode d'envoi :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/src/Piece/Form/PiecesForm.php:100
+msgid "Edit_Comments"
+msgstr "Commentaires :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/src/Piece/Form/PiecesForm.php:108
+msgid "Edit_Submit"
+msgstr "Enregistrer"
 
 #: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/search/pieces/index.phtml:12
 msgid "lbl_region"
@@ -41,78 +81,167 @@ msgstr "Lancer la recherche d'une pièce"
 msgid "recherche"
 msgstr "Rechercher"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/search/pieces/index.phtml:41
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/search/pieces/index.phtml:42
 msgid "th_marque"
 msgstr "Marque"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/search/pieces/index.phtml:41
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/search/pieces/index.phtml:42
 msgid "th_appareil"
 msgstr "Appareil"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/search/pieces/index.phtml:41
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/search/pieces/index.phtml:42
 msgid "th_piece"
 msgstr "Pièce"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/search/pieces/view.phtml:2
-msgid "search_view_name"
-msgstr "Nom du dépositaire :"
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/search/pieces/index.phtml:53
+msgid "search_go_previous"
+msgstr "Page précédente"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/search/pieces/view.phtml:3
-msgid "search_view_town"
-msgstr "Ville :"
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/search/pieces/index.phtml:53
+msgid "search_go_prev"
+msgstr "Précédente"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/search/pieces/view.phtml:4
-msgid "search_view_brand"
-msgstr "Marque :"
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/search/pieces/index.phtml:58
+msgid "search_go_page"
+msgstr "Page"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/search/pieces/view.phtml:5
-msgid "search_view_apt"
-msgstr "Type d'appareil :"
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/search/pieces/index.phtml:61
+msgid "search_go_next"
+msgstr "Page suivante"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/search/pieces/view.phtml:6
-msgid "search_view_pct"
-msgstr "Type de pièce :"
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/search/pieces/index.phtml:61
+msgid "search_go_ne"
+msgstr "Suivante"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/search/pieces/view.phtml:7
-msgid "search_view_comment"
-msgstr "Commentaires :"
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/error/exception.phtml:5
+msgid "oups_Error"
+msgstr "Oups !! Une erreur est survenue !"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/search/pieces/view.phtml:8
-msgid "search_view_date"
-msgstr "Date de dépot :"
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/error/exception.phtml:7
+msgid "error_Connect"
+msgstr "Erreur de connection"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/header.phtml:8
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/error/exception.phtml:9
+msgid "error_ConnectFirst"
+msgstr "Connectez vous d'abord."
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/error/exception.phtml:17
+msgid "Additional information"
+msgstr "Information supplémentaire"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/error/exception.phtml:20
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/error/exception.phtml:44
+msgid "File"
+msgstr "Fichier"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/error/exception.phtml:24
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/error/exception.phtml:48
+msgid "Message"
+msgstr "Messages"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/error/exception.phtml:28
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/error/exception.phtml:52
+msgid "Stack trace"
+msgstr "Pile"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/error/exception.phtml:38
+msgid "Previous exceptions"
+msgstr "Exception précédente"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/error/exception.phtml:67
+msgid "No Exception available"
+msgstr "Pas d'exception disponible"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/header.phtml:10
 msgid "logPassword"
 msgstr "Mot de passe :"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/header.phtml:9
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/header.phtml:11
 msgid "connect"
 msgstr "Connection"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/header.phtml:15
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/header.phtml:11
+msgid "MsgLostPassword"
+msgstr "Mot de pase perdu ?"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/header.phtml:11
+msgid "lostPassword"
+msgstr "Perdu!"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/header.phtml:16
+msgid "disconnect"
+msgstr "Déconnecter"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/header.phtml:21
 msgid "leitmotiv"
 msgstr ""
 "Site à vocation communautaire d'échange de piéces détachées de matériel "
-"éléctroménager de de bricolage.On a tous chez nous un appareil ménager en "
-"panne, irréparable, mais dont certaines pièces peuvent aidé à en réparer "
+"électroménager et de bricolage.On a tous chez nous un appareil ménager en "
+"panne, irréparable, mais dont certaines pièces peuvent aider à en réparer "
 "d'autres. Venez les partager !"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/mainmenu.phtml:3
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/mainmenu.phtml:11
 msgid "menuSearch"
 msgstr "Rechercher une pièce"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/mainmenu.phtml:4
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/mainmenu.phtml:12
 msgid "MenuDeposit"
-msgstr "Déposer un pièce"
+msgstr "Déposer une pièce"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/mainmenu.phtml:5
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/mainmenu.phtml:14
 msgid "menuMe"
 msgstr "Mon compte"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/mainmenu.phtml:6
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/mainmenu.phtml:15
+msgid "myMessage"
+msgstr "Mes messages"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/mainmenu.phtml:16
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/mainmenu.phtml:19
 msgid "menuContactMe"
 msgstr "Me contacter"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/mainmenu.phtml:18
+msgid "menuAddUser"
+msgstr "Créer un compte"
 
 #: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/layout/layout.phtml:13
 msgid "title1"
 msgstr "kiamapiece - Liste des dernières pièces"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/layout/layout.phtml:27
+msgid "meta_description"
+msgstr ""
+"Site communautaire d'échange de pièces détachés d'appareils électromenager"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/layout/layout.phtml:30
+msgid "meta_keywords"
+msgstr "communautaire,echange,piece,electromenager,reparation"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/view/piece/piece/view.phtml:2
+msgid "search_view_name"
+msgstr "Nom du dépositaire :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/view/piece/piece/view.phtml:3
+msgid "search_view_town"
+msgstr "Ville :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/view/piece/piece/view.phtml:4
+msgid "search_view_brand"
+msgstr "Marque :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/view/piece/piece/view.phtml:5
+msgid "search_view_apt"
+msgstr "Type d'appareil :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/view/piece/piece/view.phtml:6
+msgid "search_view_pct"
+msgstr "Type de pièce :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/view/piece/piece/view.phtml:7
+msgid "search_view_comment"
+msgstr "Commentaires :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/view/piece/piece/view.phtml:8
+msgid "search_view_date"
+msgstr "Date de dépot :"

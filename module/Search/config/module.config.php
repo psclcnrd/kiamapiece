@@ -13,21 +13,25 @@ namespace Search;
 return array (
 		'controllers' => array (
 				'invokables' => array (
-						'Search\Controller\Pieces' => 'Search\Controller\PiecesController' 
+						'Search\Controller\Search' => 'Search\Controller\SearchController' 
 				) 
 		),
 		'view_manager' => array (
-				'display_not_found_reason' => true,
-				'display_exceptions' => true,
-				'doctype' => 'HTML5',
+				'display_not_found_reason' 	=> true,
+				'display_exceptions' 		=> true,
+				'not_found_template'       	=> 'error/404',
+				'exception_template'       	=> 'error/index',
+				'doctype' 					=> 'HTML5',
 				'template_map' => array (
-						'layout/layout' => __DIR__ . '/../view/layout/layout.phtml',
-						'content/header' => __DIR__ . '/../view/content/header.phtml',
-						'content/footer' => __DIR__ . '/../view/content/footer.phtml',
-						'content/mainmenu' => __DIR__ . '/../view/content/mainmenu.phtml',
-						'search/pieces/index' => __DIR__ . '/../view/search/pieces/index.phtml',
-						'search/pieces/list' => __DIR__ . '/../view/search/pieces/list.phtml',
-						'search/pieces/view' => __DIR__ . '/../view/search/pieces/view.phtml', 
+						'layout/layout' 		=> __DIR__ . '/../view/layout/layout.phtml',
+						'content/header' 		=> __DIR__ . '/../view/content/header.phtml',
+						'content/footer' 		=> __DIR__ . '/../view/content/footer.phtml',
+						'content/mainmenu' 		=> __DIR__ . '/../view/content/mainmenu.phtml',
+						'search/pieces/index' 	=> __DIR__ . '/../view/search/pieces/index.phtml',
+						'search/pieces/list' 	=> __DIR__ . '/../view/search/pieces/list.phtml',
+						'error/nologin'			=> __DIR__ . '/../view/error/nologin.phtml',
+						'error/404'				=> __DIR__ . '/../view/error/404.phtml',
+						'error/index'           => __DIR__ . '/../view/error/exception.phtml',
 				),
 				'template_path_stack' => array (
 						'search' => __DIR__ . '/../view' 
@@ -36,13 +40,23 @@ return array (
 		),
 		'router' => array (
 				'routes' => array (
+						'home' => array(
+								'type' => 'Zend\Mvc\Router\Http\Literal',
+								'options' => array(
+										'route'    => '/',
+										'defaults' => array(
+												'controller' => 'Search\Controller\Search',
+												'action'     => 'index',
+										),
+								),
+						),
 						'search' => array (
 								'type' => 'Literal',
 								'options' => array (
 										'route' => '/search',
 										'defaults' => array (
 												'__NAMESPACE__' => 'Search\Controller',
-												'controller' => 'Pieces',
+												'controller' => 'Search',
 												'action' => 'index' 
 										) 
 								),
@@ -59,34 +73,21 @@ return array (
 												),
 												'verb' => 'get,post' 
 										),
-										'view' => array (
+										'nav' => array (
 												'type' => 'Segment',
 												'options' => array (
-														'route' => '/view/:id',
+														'route' => '/nav/:page',
 														'constraints' => array (
-																'id' => '[1..9][0..9]*' 
+																'page' => '[1-9][0-9]*'
 														),
 														'defaults' => array (
-																'action' => 'view' 
-														) 
+																'action' => 'nav'
+														)
 												),
-												'verb' => 'get,post' 
-										) 
+												'verb' => 'get,post'
+										)										
 								) 
 						),
-						'login' => array (
-								'type' => 'Literal',
-								'options' => array (
-										'route' => '/login',
-										'defaults' => array (
-												'__NAMESPACE__' => 'Search\Controller',
-												'controller' => 'Pieces',
-												'action' => 'login' 
-										) 
-								),
-								'verb' => 'get',
-								'may_terminate' => true 
-						) 
 				) 
 		),
 		'doctrine' => array (
@@ -105,11 +106,21 @@ return array (
 						) 
 				) 
 		),
-		'service_manager' => array (
-				/*'factories' => array (           Un translateur est déjà déclarer dans le MVC
-						'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory' 
-				) */
+		'view_helpers' => array(
+				'invokables' => array(
+						'MyFormRow' => 'Search\Form\View\Helper\MyFormRow',
+						'MyFormSelect' => 'Search\Form\View\Helper\MyFormSelect',
+				)
 		),
+		'service_manager' => array(
+						'abstract_factories' => array(
+								'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
+								'Zend\Log\LoggerAbstractServiceFactory',
+						),
+						'aliases' => array(
+								'translator' => 'MvcTranslator',
+						),						
+		),		
 		'translator' => array (
 				'locale' => 'fr_FR',
 				'translation_file_patterns' => array (
@@ -120,5 +131,19 @@ return array (
 								'text_domain' => 'search' 
 						) 
 				) 
-		) 
+		),
+		'search_module' => array(
+			'line_per_page' => 15
+		),
+		'smtp_options' => array(
+    					'name' => 'ovh.net',
+    					'host' => 'ssl0.ovh.net',
+    					'port' => 465,
+    					'connection_class' => 'login',
+    					'connection_config' => array(
+    							'username' => 'admin@kiamapiece.fr',
+    							'password' => 'Du4BlieWnal',
+    							'ssl' => 'ssl',
+    					)
+    	)
 );
