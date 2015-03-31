@@ -1,0 +1,22 @@
+<div class='display_zone'>
+<?php
+	switch ($this->action) {
+		case 'add' : $form->setAttribute('action',$this->url('message/'.$this->action,array('pieceId' => $this->id)));break;
+		case 'respond' : $form->setAttribute('action',$this->url('message/'.$this->action,array('id' => $this->id)));break;
+		default : $form->setAttribute('action',$this->url('message/'.$this->action,array('id' => $this->id)));break;
+	}
+	$form->setAttribute('method','post');
+	$form->prepare();
+	echo $this->form()->opentag($form);
+	if (($this->action!='add')|| ($this->action!='respond'))  echo $this->formHidden($form->get('id'));
+?>
+<div class='infoMessageTo'>
+<?php echo $this->translate('messageEdit_To','message'); ?> :<?php echo $this->to; ?><br>
+<?php echo $this->translate('messageEdit_PieceMarque','message'); ?> <?php echo $this->piece->getBrand()->Description;?>, appareil <?php echo $this->piece->getApplianceType()->Description;?>, type <?php echo $this->piece->getPieceType()->Description; ?>. 
+</div>
+<div class='editor'>
+<?php echo $this->formTextarea($form->get('Message'));?>
+</div>
+<a class='buttonType' id='btSubmit' data-client='message' data-role='add'><?php echo $this->translate('messageSend','message')?></a>
+<?php echo $this->form()->closetag($form); ?>
+</div>

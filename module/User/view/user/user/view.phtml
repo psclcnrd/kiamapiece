@@ -1,0 +1,78 @@
+<div id='viewUser'>
+<div class='AddressBlock'>
+<div class='iRow'><span class='iLabel'><?php echo $this->translate('formEmail','user');?></span><span class='iInput'><?php echo $this->user->getEmail();?></span></div>
+<div class='iRow'><span class='iLabel'><?php echo $this->translate('formPseudo','user');?></span><span class='iInput'><?php echo $this->user->getPseudo();?></span></div>
+<div class='iRow'><span class='iLabel'><?php echo $this->translate('formName','user');?></span><span class='iInput'><?php echo $this->user->getName();?></span></div>
+<div class='iRow'><span class='iLabel'><?php echo $this->translate('formSurname','user');?></span><span class='iInput'><?php echo $this->user->getSurname();?></span></div>
+<div class='iRow'><span class='iLabel'><?php echo $this->translate('formPhone1','user');?></span><span class='iInput'><?php echo $this->user->getPhone1();?></span></div>
+<div class='iRow'><span class='iLabel'><?php echo $this->translate('formPhone2','user');?></span><span class='iInput'><?php echo $this->user->getPhone2();?></span></div>
+<a id='userUpd' class='buttonType' href='<?php echo $this->basePath().'/user/edit/'.$this->user->getId();?>'><?php echo $this->translate('userUpd','user')?></a>
+<a id='userUpdPwd' class='buttonType' href='<?php echo $this->basePath().'/user/pwd/'.$this->user->getId();?>'><?php echo $this->translate('userUpdPwd','user')?></a>
+</div>
+<div id='viewUserAddresses'>
+<?php foreach ($this->user->getAddresses() as $add) : ?>
+<div class='AddressBlock'>
+<b><?php echo $add->AddressName;?></b>
+<div class='iRow'><span class='iLabel'><?php echo $this->translate('formNumber','user');?></span><span class='iInput'><?php echo $add->Number;?></span></div>
+<div class='iRow'><span class='iLabel'><?php echo $this->translate('formStreet','user');?></span><span class='iInput'><?php echo $add->Street;?></span></div>
+<div class='iRow'><span class='iLabel'><?php echo $this->translate('formComplement','user');?></span><span class='iInput'><?php echo $add->Complement;?></span></div>
+<div class='iRow'><span class='iLabel'><?php echo $this->translate('formPostalCode','user');?></span><span class='iInput'><?php echo $add->PostalCode;?></span></div>
+<div class='iRow'><span class='iLabel'><?php echo $this->translate('formTown','user');?></span><span class='iInput'><?php echo $add->Town;?></span></div>
+<a id='userUpdAddress' href='<?php echo $this->basePath().'/adr/edit/'.$add->id;?>' class='buttonType'><?php echo $this->translate('userUpdAddress','user')?></a>
+</div>
+<?php endforeach;?>
+</div>
+<a id='userAddAddress' href='<?php echo $this->basePath().'/adr/add';?>' class='buttonType'><?php echo $this->translate('userAddAddress','user')?></a>
+<!-- Pieces list -->
+<?php if (count($this->pieces)) :?>
+<hr>
+<div class='userPieces'>
+<?php if (count($this->pieces)>1) echo $this->translate('formTextDispoPl','user'); else echo $this->translate('formTextDispo','user');?>
+<table>
+<tr><th><?php echo $this->translate('viewTableBrand','user'); ?></th><th><?php echo $this->translate('viewTableApT','user');?></th><th><?php echo $this->translate('viewTablePieceType','user'); ?></th><th><?php echo $this->translate('viewTableStatus','user'); ?></th><th><?php echo $this->translate('viewTableOper','user'); ?></th></tr>
+<?php foreach($this->pieces as $pieces) :?>
+<tr<?php if ($pieces->getStatus()->id!=1) echo " class='workInProgress'"; ?>>
+	<td><?php echo $pieces->getBrand()->Description; ?></td>
+	<td><?php echo $pieces->getApplianceType()->Description; ?></td>
+	<td><?php echo $pieces->getPieceType()->Description; ?></td>
+	<td><?php echo $pieces->getStatus()->Description; ?></td>
+	<td>
+		<span class='btDelete' Title='<?php echo $this->translate('viewTitleDelP','user'); ?>' data-action='<?php echo $this->basePath().'/pieces/del';?>' Id='<?php echo $pieces->getId();?>'></span>
+		<span class='btEdit' title='<?php echo $this->translate('viewTitleEdtP','user'); ?>' data-action='<?php echo $this->basePath().'/pieces/edit';?>' Id='<?php echo $pieces->getId();?>'></span>
+		<?php if ($pieces->getStatus()->id!=1) : ?>
+			<span class='btMessage' Title='<?php echo $this->translate('viewTitleMessage','user'); ?>' data-action='<?php echo $this->basePath().'/message/add';?>' Id='<?php echo $pieces->getId();?>' data-messageBox='out'></span>
+		<?php endif;?>
+	</td>
+</tr>
+<?php endforeach;?>
+</table>
+</div>
+<?php endif;?>
+<!-- Request list -->
+<?php if (count($this->request)) :?>
+<hr>
+<div class='userPieces'>
+<?php if (count($this->request)>1) echo $this->translate('formTextRequestPl','user'); else echo $this->translate('formTextRequest','user');?>
+<table>
+<tr><th><?php echo $this->translate('viewTableBrand','user'); ?></th><th><?php echo $this->translate('viewTableApT','user');?></th><th><?php echo $this->translate('viewTablePieceType','user'); ?></th><th><?php echo $this->translate('viewTableOper','user'); ?></th></tr>
+<?php foreach($this->request as $request) :?>
+<tr>
+	<td><?php echo $request->getPiece()->getBrand()->Description; ?></td>
+	<td><?php echo $request->getPiece()->getApplianceType()->Description; ?></td>
+	<td><?php echo $request->getPiece()->getPieceType()->Description; ?></td>
+	<td>
+  		<?php if ($request->getPiece()->getStatus()->id!=3) :?>
+  		<span class='btDelete' Title='<?php echo $this->translate('viewTitleDelP','user'); ?>' data-action='<?php echo $this->basePath().'/request/del';?>' Id='<?php echo $request->getId();?>'></span>
+		  <span class='btReceive' Title='<?php echo $this->translate('viewTitleReceive','user'); ?>' data-action='<?php echo $this->basePath().'/request/receive';?>' Id='<?php echo $request->getId();?>'></span>
+  		<?php else : ?>
+  		<?php echo $this->translate('viewTitleEnd','user'); ?>
+  		<?php endif;?>
+  		<span class='btMessage' Title='<?php echo $this->translate('viewTitleMessage','user'); ?>' data-action='<?php echo $this->basePath().'/message/add';?>' Id='<?php echo $request->getId();?>' data-messageBox='in'></span>
+	</td>
+</tr>
+<?php endforeach;?>
+</table>
+</div>
+<?php endif;?>
+<!-- end of viewUser -->
+</div>

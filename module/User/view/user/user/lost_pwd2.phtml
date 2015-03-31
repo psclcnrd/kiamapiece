@@ -1,0 +1,19 @@
+<div class='formUser'>
+<?php 
+$form->setAttribute('action',$this->url('user/validpwd',array('ctrl' => $this->ctrl)));
+$form->setAttribute('method','post');
+$form->prepare();
+
+echo $this->form()->openTag($form);
+?>
+<?php echo $this->translate('LostPwd_NewPassword','user');?><br>
+<br>
+<?php
+  echo $this->formHidden($form->get('csrf'));
+  echo $this->MyFormRow($form->get('Password'));
+  echo $this->MyFormRow($form->get('PasswordRetype'));
+?>
+<br>
+<a class='buttonType' id='btSubmit' data-client='user' data-role='lpemail' href='#' title='<?php echo $this->translate('LostPwd_TitleButtonSend','user'); ?>'><?php echo $this->translate('LostPwd_ChangePassword','user'); ?></a>
+<?php echo $this->form()->closeTag();?>
+</div>

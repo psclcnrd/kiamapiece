@@ -1,0 +1,15 @@
+<div class='display_zone'>
+<div class='infoMessageTo'>
+<?php if ($this->message->getUserFrom()->getId()==$this->me) echo $this->translate('messageView_To','message').":".$this->message->getUserTo()->getPseudo();
+		else echo $this->translate('messageView_From','message').":".$this->message->getUserFrom()->getPseudo();?>
+<br>
+<?php echo $this->translate('messageEdit_PieceMarque','message'); ?> <?php echo $this->message->getPiece()->getBrand()->Description;?>, appareil <?php echo $this->message->getPiece()->getApplianceType()->Description;?>, type <?php echo $this->message->getPiece()->getPieceType()->Description; ?>. 
+</div>
+<div class='messageView'>
+<?php echo $this->message->getMessage();?>
+</div>
+<?php if ($this->message->getUserFrom()->getId()!=$this->me) : ?>
+<a class='buttonType' href='<?php echo $this->basePath().'/message/respond/'.$this->message->getId()?>' title='<?php echo $this->translate('messageView_Respond','message');?>'><?php echo $this->translate('messageView_ButtonRespond','message');?></a>
+<?php endif; ?>
+<a class='buttonType' href='<?php echo $this->basePath().'/message/list'?>' title='<?php echo $this->translate('messageView_Return','message');?>'><?php echo $this->translate('messageView_ButtonReturn','message');?></a>
+</div>

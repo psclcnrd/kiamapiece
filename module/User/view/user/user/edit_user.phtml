@@ -1,0 +1,34 @@
+<div class='formUser'>
+<?php 
+
+if ($this->action=='add') $form->setAttribute('action',$this->url('user/'.$this->action));else $form->setAttribute('action',$this->url('user/'.$this->action,array('id' => $this->id)));
+$form->setAttribute('method','post');
+$form->prepare();
+
+echo $this->form()->openTag($form);
+if ($this->action!='add') echo $this->formHidden($form->get('id'));
+echo $this->formHidden($form->get('csrf'));
+echo $this->MyFormRow($form->get('Email'));
+echo $this->MyFormRow($form->get('Pseudo'));
+if ($this->action=='add') {
+	echo $this->MyFormRow($form->get('Password'));
+	echo $this->MyFormRow($form->get('PasswordRetype'));
+}
+echo $this->MyFormRow($form->get('Name'));
+echo $this->MyFormRow($form->get('Surname'));
+echo $this->MyFormRow($form->get('Phone1'));
+echo $this->MyFormRow($form->get('Phone2'));
+
+if ($this->action=='add') {
+	echo $this->myFormRow($form->get('Number'));
+	echo $this->myFormRow($form->get('Street'));
+	echo $this->myFormRow($form->get('Complement'));
+	echo $this->myFormRow($form->get('PostalCode'));
+	echo $this->myFormRow($form->get('Town'));
+	echo $this->myFormRow($form->get('RegionId'));
+}
+?>
+<a class='buttonType' href='<?php echo $this->basePath().'/user/view'; ?>'><?php echo $this->translate('backToSearch','user'); ?></a>
+<a class='buttonType' id='btSubmit' data-client='user' data-role='<?php echo $this->action; ?>'>enregistre</a>
+<?php echo $this->form()->closeTag();?>
+</div>

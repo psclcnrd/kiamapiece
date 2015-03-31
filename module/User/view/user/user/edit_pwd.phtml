@@ -1,0 +1,18 @@
+<div class='formUser'>
+<?php 
+
+$form->setAttribute('action',$this->url('user/pwd',array('id' => $this->id)));
+$form->setAttribute('method','post');
+$form->prepare();
+
+echo $this->form()->openTag($form);
+if ($this->action!='add') echo $this->formHidden($form->get('id'));
+echo $this->formHidden($form->get('csrf'));
+echo $this->MyFormRow($form->get('OldPassword'));
+echo $this->MyFormRow($form->get('Password'));
+echo $this->MyFormRow($form->get('PasswordRetype'));
+?>
+<a class='buttonType' href='<?php echo $this->basePath().'/user/view'; ?>'><?php echo $this->translate('backToSearch','user'); ?></a>
+<a class='buttonType' id='btSubmit' data-client='user' data-role='pwd'><?php echo $this->translate('ButtonSave','user'); ?></a>
+<?php echo $this->form()->closeTag();?>
+</div>

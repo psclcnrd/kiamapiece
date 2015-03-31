@@ -1,0 +1,314 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Projet kiamapiece, module User\n"
+"POT-Creation-Date: 2015-03-18 22:00+0100\n"
+"PO-Revision-Date: 2015-03-18 22:00+0100\n"
+"Last-Translator: Pascal CONRAD <pascal.conrad@gmail.com>\n"
+"Language-Team: \n"
+"Language: French\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;translate\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: /home/pascal/public_html/zf2biz/kiamapiece/module/"
+"User\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Controller/UserController.php:61
+msgid "Principale"
+msgstr "Principale"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserAddForm.php:48
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserEditForm.php:48
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:3
+msgid "formEmail"
+msgstr "Adresse mail :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserAddForm.php:59
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserEditForm.php:59
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:4
+msgid "formPseudo"
+msgstr "Pseudo :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserAddForm.php:70
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserPasswordForm.php:54
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserPasswordLostForm.php:40
+msgid "formPasswd1"
+msgstr "Mot de passe :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserAddForm.php:78
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserPasswordForm.php:62
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserPasswordLostForm.php:48
+msgid "formPasswd2"
+msgstr "Mot de passe  (resaisir) :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserAddForm.php:86
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserEditForm.php:70
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:5
+msgid "formName"
+msgstr "Nom :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserAddForm.php:97
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserEditForm.php:81
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:6
+msgid "formSurname"
+msgstr "Prénom :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserAddForm.php:104
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserEditForm.php:91
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:7
+msgid "formPhone1"
+msgstr "Téléphone principal :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserAddForm.php:113
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserEditForm.php:103
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:8
+msgid "formPhone2"
+msgstr "Autre téléphone (facultatif) :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserAddForm.php:122
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/AdrAddForm.php:61
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:16
+msgid "formNumber"
+msgstr "Numéro :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserAddForm.php:131
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/AdrAddForm.php:76
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:17
+msgid "formStreet"
+msgstr "Rue :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserAddForm.php:143
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/AdrAddForm.php:88
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:18
+msgid "formComplement"
+msgstr "Complément d'adresse :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserAddForm.php:155
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/AdrAddForm.php:100
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:19
+msgid "formPostalCode"
+msgstr "Code postal :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserAddForm.php:167
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/AdrAddForm.php:115
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:20
+msgid "formTown"
+msgstr "Ville :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserAddForm.php:181
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/AdrAddForm.php:140
+msgid "Region"
+msgstr "Région :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserAddForm.php:192
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserPasswordForm.php:70
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/AdrAddForm.php:161
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserPasswordEmailForm.php:48
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserPasswordLostForm.php:56
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserEditForm.php:114
+msgid "formSubmit"
+msgstr "Enregistrer"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserPasswordForm.php:46
+msgid "formOldPasswd"
+msgstr "Ancien mot de passe :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/AdrAddForm.php:52
+msgid "formAdrName"
+msgstr "Description de l'adresse :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/src/User/Form/UserPasswordEmailForm.php:40
+msgid "PwdLost_formEmail"
+msgstr "Adresse mail  pour la récupération:"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/edit_pwd.phtml:15
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/edit_user.phtml:31
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/edit_adr.phtml:19
+msgid "backToSearch"
+msgstr "Retour à la vue"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/edit_pwd.phtml:16
+msgid "ButtonSave"
+msgstr "Enregistrer les modifications"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/lost_pwd2.phtml:9
+msgid "LostPwd_NewPassword"
+msgstr "Veillez saisir votre nouveau mot de passe."
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/lost_pwd2.phtml:17
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/lost_pwd.phtml:16
+msgid "LostPwd_TitleButtonSend"
+msgstr "Envoyer demande de changement"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/lost_pwd2.phtml:17
+msgid "LostPwd_ChangePassword"
+msgstr "Changer le mot de passe"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/lost_pwd.phtml:9
+msgid "LostPwd_Message"
+msgstr ""
+"Vous avez perdu votre mot de passe.<br>Pour le changer, une confirmation va "
+"vous être envoyé par mail. Cliquer sur le lien donné pour changer vote mot "
+"de passe."
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/lost_pwd.phtml:16
+msgid "LostPwd_ButtonSend"
+msgstr "Envoyer demande de changement"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:9
+msgid "userUpd"
+msgstr "Modifier les informations"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:10
+msgid "userUpdPwd"
+msgstr "Modifier le mot de passe"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:21
+msgid "userUpdAddress"
+msgstr "Modifier cette adresse"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:25
+msgid "userAddAddress"
+msgstr "Ajouter une adresse"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:30
+msgid "formTextDispoPl"
+msgstr "Pièces misent à disposition :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:30
+msgid "formTextDispo"
+msgstr "Pièce mise à disposition :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:32
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:57
+msgid "viewTableBrand"
+msgstr "Marque :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:32
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:57
+msgid "viewTableApT"
+msgstr "Type d'appareil"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:32
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:57
+msgid "viewTablePieceType"
+msgstr "Type de pièces"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:32
+msgid "viewTableStatus"
+msgstr "Statut"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:32
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:57
+msgid "viewTableOper"
+msgstr "Opération"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:40
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:65
+msgid "viewTitleDelP"
+msgstr "Supprimer cette pièce"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:41
+msgid "viewTitleEdtP"
+msgstr "Modifier cette pièce"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:43
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:70
+msgid "viewTitleMessage"
+msgstr "Envoyer un message"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:55
+msgid "formTextRequestPl"
+msgstr "Pièces demandées :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:55
+msgid "formTextRequest"
+msgstr "Pièce demandée :"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:66
+msgid "viewTitleReceive"
+msgstr "La pièce a été reçue"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/User/view/user/user/view.phtml:68
+msgid "viewTitleEnd"
+msgstr "Traitement terminé"
+
+#~ msgid "formEmptyTown"
+#~ msgstr "Code postal nécéssaire"
+
+#~ msgid "lbl_region"
+#~ msgstr "Région  :"
+
+#~ msgid "lbl_marque"
+#~ msgstr "Marque :"
+
+#~ msgid "lbl_apt"
+#~ msgstr "Type d'appareil :"
+
+#~ msgid "lbl_pct"
+#~ msgstr "Pièce  :"
+
+#~ msgid "ttl_go_search"
+#~ msgstr "Lancer la recherche d'une pièce"
+
+#~ msgid "recherche"
+#~ msgstr "Rechercher"
+
+#~ msgid "th_marque"
+#~ msgstr "Marque"
+
+#~ msgid "th_appareil"
+#~ msgstr "Appareil"
+
+#~ msgid "th_piece"
+#~ msgstr "Pièce"
+
+#~ msgid "search_view_name"
+#~ msgstr "Nom du dépositaire :"
+
+#~ msgid "search_view_town"
+#~ msgstr "Ville :"
+
+#~ msgid "search_view_brand"
+#~ msgstr "Marque :"
+
+#~ msgid "search_view_apt"
+#~ msgstr "Type d'appareil :"
+
+#~ msgid "search_view_pct"
+#~ msgstr "Type de pièce :"
+
+#~ msgid "search_view_comment"
+#~ msgstr "Commentaires :"
+
+#~ msgid "search_view_date"
+#~ msgstr "Date de dépot :"
+
+#~ msgid "connect"
+#~ msgstr "Connection"
+
+#~ msgid "leitmotiv"
+#~ msgstr ""
+#~ "Site à vocation communautaire d'échange de piéces détachées de matériel "
+#~ "éléctroménager de de bricolage.On a tous chez nous un appareil ménager en "
+#~ "panne, irréparable, mais dont certaines pièces peuvent aidé à en réparer "
+#~ "d'autres. Venez les partager !"
+
+#~ msgid "menuSearch"
+#~ msgstr "Rechercher une pièce"
+
+#~ msgid "MenuDeposit"
+#~ msgstr "Déposer un pièce"
+
+#~ msgid "menuMe"
+#~ msgstr "Mon compte"
+
+#~ msgid "menuContactMe"
+#~ msgstr "Me contacter"
+
+#~ msgid "title1"
+#~ msgstr "kiamapiece - Liste des dernières pièces"

@@ -1,0 +1,24 @@
+<div id='Search_View'>
+<?php
+if ($this->action=='add') $form->setAttribute('action',$this->url('pieces/'.$this->action));
+	else $form->setAttribute('action',$this->url('pieces/'.$this->action,array('id' => $this->id)));
+$form->setAttribute('method','post');
+$form->prepare();
+echo $this->form()->opentag($form);
+?>
+<div class='iForm' style='width : 600px;height : 630px'>
+<?php if ($this->action!='add') echo $this->formHidden($form->get('id')); ?>
+<?php echo $this->MyFormRow($form->get('Address')); ?>
+<?php echo $this->MyFormRow($form->get('Brand')); ?>
+<?php echo $this->MyFormRow($form->get('ApplianceType')); ?>
+<?php echo $this->MyFormRow($form->get('PieceType')); ?>
+<?php echo $this->MyFormRow($form->get('SendingMode')); ?>
+<div class='editor'>
+<?php echo $this->MyFormRow($form->get('Comments')); ?>
+</div>
+<?php echo $this->formSubmit($form->get('submit'))?>
+</div>
+<?php 
+  echo $this->form()->closetag($form);
+?>
+</div>
