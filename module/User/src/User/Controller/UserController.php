@@ -33,6 +33,11 @@ use Zend\Mail\Storage;
 class UserController extends ProjectActionController
 {
 
+	/**
+	 * Tableau des meta title
+	 * @var unknown
+	 */
+	protected $arrayTitle=array('addUser' => 'meta_title_01','editUser' => 'meta_title_02','editPassword' => 'meta_title_03','validateUser' => 'meta_title_04','validPassword' => 'meta_title_05','lostPassword' => 'meta_title_06','viewUser' => 'meta_title_06-1');
 
     /**
      * Ajouter un utilisateur
@@ -223,7 +228,7 @@ class UserController extends ProjectActionController
     	$id=$userService->validate($control);
     	if ($id!==false) $this->getLog()->info("User ID=".$id." validation complete");
     	  else $this->getLog()->alert("Error in validation from control=$control");
-    	$this->buildLayout('vaidateUser');
+    	$this->buildLayout('validateUser');
     	return new ViewModel(array());
     }
     

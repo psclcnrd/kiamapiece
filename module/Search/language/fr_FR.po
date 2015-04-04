@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Projet kiamapiece, module Search\n"
-"POT-Creation-Date: 2015-03-31 18:44+0100\n"
-"PO-Revision-Date: 2015-03-31 18:45+0100\n"
+"POT-Creation-Date: 2015-04-04 13:54+0100\n"
+"PO-Revision-Date: 2015-04-04 19:06+0100\n"
 "Last-Translator: Pascal CONRAD <pascal.conrad@gmail.com>\n"
 "Language-Team: \n"
 "Language: French\n"
@@ -13,19 +13,95 @@ msgstr ""
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;translate\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: /home/pascal/public_html/zf2biz/kiamapiece/module/"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: /home/pascal/public_html/zf2biz/kiamapiece/module/"
 "Search\n"
-"X-Poedit-SearchPath-1: .\n"
 "X-Poedit-SearchPath-2: /home/pascal/public_html/zf2biz/kiamapiece/module/"
 "Piece\n"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/src/Piece/Controller/PieceController.php:81
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/src/Piece/Controller/PieceController.php:117
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/src/Search/Controller/ProjectActionController.php:82
+msgid "meta_title_00"
+msgstr "Site d'échange de pièces détachés d'électroménager"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/src/Search/Controller/UserController.php:40
+msgid "meta_title_01"
+msgstr "Ajouter un utilisateur"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/src/Search/Controller/UserController.php:40
+msgid "meta_title_02"
+msgstr "Editer un utilisateur"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/src/Search/Controller/UserController.php:40
+msgid "meta_title_03"
+msgstr "Modifier le mot de passe"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/src/Search/Controller/UserController.php:40
+msgid "meta_title_04"
+msgstr "Validation d'un utilisateur"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/src/Search/Controller/UserController.php:40
+msgid "meta_title_05"
+msgstr "Validation du changement de mot de passe perdu"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/src/Search/Controller/UserController.php:40
+msgid "meta_title_06"
+msgstr "Mot de passe perdu"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/src/Search/Controller/UserController.php:40
+msgid "meta_title_06-1"
+msgstr "Informations de l'utilisateur"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/src/Search/Controller/UserController.php:40
+msgid "meta_title_07"
+msgstr "Liste des dernières pièces saisies"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/src/Search/Controller/UserController.php:40
+msgid "meta_title_08"
+msgstr "Ajouter une nouvelle pièce"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/src/Search/Controller/UserController.php:40
+msgid "meta_title_09"
+msgstr "Modifier une pièce"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/src/Search/Controller/UserController.php:40
+msgid "meta_title_09-1"
+msgstr "Voir une pièce"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/src/Search/Controller/UserController.php:40
+msgid "meta_title_10"
+msgstr "Ajouter un message"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/src/Search/Controller/UserController.php:40
+msgid "meta_title_11"
+msgstr "Liste des messages"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/src/Search/Controller/UserController.php:40
+msgid "meta_title_12"
+msgstr "Affichage message"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/src/Search/Controller/UserController.php:40
+msgid "meta_title_13"
+msgstr "Répondre à un message"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/src/Search/Controller/UserController.php:40
+msgid "meta_title_14"
+msgstr "Contacter l'administrateur du site"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/src/Search/Controller/UserController.php:40
+msgid "meta_title_15"
+msgstr "Contacter l'administrateur du site"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/src/Search/Controller/UserController.php:40
+msgid "meta_title_16"
+msgstr "Mention légales et copyrights"
+
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/src/Piece/Controller/PieceController.php:88
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/src/Piece/Controller/PieceController.php:124
 msgid "error_NoIdent"
 msgstr "Bizarre, identifiant non trouvé !"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/src/Piece/Controller/PieceController.php:84
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/src/Piece/Controller/PieceController.php:121
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/src/Piece/Controller/PieceController.php:91
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Piece/src/Piece/Controller/PieceController.php:128
 msgid "error_NoAtYou"
 msgstr "Bizarre, la pièce ne vous appartient pas !"
 
@@ -162,7 +238,7 @@ msgstr "Connection"
 
 #: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/header.phtml:11
 msgid "MsgLostPassword"
-msgstr "Mot de pase perdu ?"
+msgstr "Mot de passe perdu ?"
 
 #: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/header.phtml:11
 msgid "lostPassword"
@@ -184,7 +260,7 @@ msgstr ""
 msgid "menuSearch"
 msgstr "Rechercher une pièce"
 
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/mainmenu.phtml:12
+#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/mainmenu.phtml:13
 msgid "MenuDeposit"
 msgstr "Déposer une pièce"
 
@@ -204,10 +280,6 @@ msgstr "Me contacter"
 #: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/content/mainmenu.phtml:18
 msgid "menuAddUser"
 msgstr "Créer un compte"
-
-#: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/layout/layout.phtml:13
-msgid "title1"
-msgstr "kiamapiece - Liste des dernières pièces"
 
 #: /home/pascal/public_html/zf2biz/kiamapiece/module/Search/view/layout/layout.phtml:27
 msgid "meta_description"

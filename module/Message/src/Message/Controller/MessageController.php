@@ -22,7 +22,19 @@ use Zend\Authentication\Storage\Session as SessionStorage;
 
 class MessageController extends ProjectActionController
 {
+	
+	/**
+	 * Tableau des meta title
+	 * @var unknown
+	 */
+	protected $arrayTitle=array('addMessage' => 'meta_title_10','listMessages' => 'meta_title_11','viewMessage' => 'meta_title_12','respondMessages' => 'meta_title_13');
     
+	/**
+	 * Ajoute un message
+	 * 
+	 * @throws \Exception
+	 * @return Ambigous <\Zend\Http\Response, \Zend\Stdlib\ResponseInterface>|\Zend\View\Model\ViewModel
+	 */
     public function addAction() {
     	$id=$this->params()->fromRoute('pieceId',null);
     	if ($id==null) {
@@ -140,7 +152,7 @@ class MessageController extends ProjectActionController
     			return $this->redirect()->toRoute('message/list');
     		}
     	}
-    	$this->buildLayout('editMessages');
+    	$this->buildLayout('respondMessages');
     	$viewModel=new ViewModel(array('form' => $form,'action' => 'respond','id' => $id,'piece' => $originMessage->getPiece(),'me' => $auth->getIdentity(),'to' => $usersService->findById($originMessage->getUserFrom())->getPseudo()));
     	$viewModel->setTemplate('message/edit');
     	return $viewModel;

@@ -29,6 +29,12 @@ use Piece\Form\PiecesForm;
 
 class PieceController extends ProjectActionController
 {
+	
+	/**
+	 * Tableau des meta title
+	 * @var unknown
+	 */
+	protected $arrayTitle=array('addPiece' => 'meta_title_08','editPiece' => 'meta_title_09','viewPiece' => 'meta_title_09-1');
 
 	/**
      * Ajout d'une nouvelle pièces
@@ -136,7 +142,7 @@ class PieceController extends ProjectActionController
     	$id=$this->params()->fromRoute('id',null);
     	$piecesService=$this->getServiceLocator()->get('Piece\Service\Pieces');
     	$pieces=$piecesService->findById($id);
-    	$this->buildLayout('viewPieces');
+    	$this->buildLayout('viewPiece');
     	return new ViewModel(array(
     			'pieces' => $pieces,
     	));

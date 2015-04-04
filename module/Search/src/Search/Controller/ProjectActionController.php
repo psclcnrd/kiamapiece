@@ -25,10 +25,10 @@ abstract class ProjectActionController extends AbstractActionController {
 	protected $translator;
 	
 	/**
-	 * Service du gestionnaire detable des users
-	 * @var unknown
+	 * Tableau des titres à inserer dans la balise <TITLE>
+	 * @var array of string
 	 */
-	protected $usersService;
+	protected $arrayTitle=array();
 	
 	/**
 	 * Recherche le gestionnaire de log Zend\Logger
@@ -72,12 +72,16 @@ abstract class ProjectActionController extends AbstractActionController {
 		if ($this->translator===null) $this->translator=$this->getServiceLocator()->get('translator');
 		return $this->translator;
 	}
-	
-	protected function getUsersService() {
-		if ($this->usersService==null) {
-			$this->usersService=$this->getServiceLocator()->get('User\Service\Users');
-		}
-		return $this->usersService;
+
+	/**
+	 * Retourne le title d'un évènement du controleur
+	 * le tableay $arrayTitle est initialiser à chaque instance de la classe
+	 * @param string $name
+	 */
+	private function getTitleByName($name) {
+		if (($name==null) || (count($this->arrayTitle)==0)) $title=$this->getTranslator()->translate('meta_title_00',"search");
+		  else $title=$this->getTranslator()->translate($this->arrayTitle[$name],"search");
+		return $title;
 	}
 	
 	/**
@@ -88,13 +92,14 @@ abstract class ProjectActionController extends AbstractActionController {
 		$auth=new AuthenticationService();
 		$auth->setStorage(new SessionStorage("kmpv1"));
 		if ($auth->hasIdentity()) {
-			$usersService=$this->getUsersService();
+			$usersService=$this->getServiceLocator()->get('User\Service\Users');
 			$user=$usersService->findById($auth->getIdentity());
 			$uName=$user->getSurname()." ".$user->getName();
 		} else $uName="";
 	
 		$layoutView=$this->layout();
 		$layoutView->setVariable('buildType','normal');
+		$layoutView->setVariable('metaTitle',$this->getTitleByName($name));
 		//$layoutView->setTemplate('layout/layout');
 	
 		$headerView=new ViewModel(array('auth' => $auth->hasIdentity(),'identity' => $uName));

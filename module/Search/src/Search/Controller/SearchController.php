@@ -55,6 +55,12 @@ class SearchController extends ProjectActionController {
 	private $criteria=array();
 	
 	/**
+	 * Tableau des meta title
+	 * @var unknown
+	 */
+	protected $arrayTitle=array('lastPieces' => 'meta_title_07');
+	
+	/**
 	 * Recherche le manager de la base de données, Doctrine en l'occurence
 	 * @return DoctrineEntityManager
 	 */

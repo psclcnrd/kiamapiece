@@ -14,3 +14,7 @@ public/css/jquery-ui.css
 public/img/favicon-old.ico
 public/js/jquery-ui.js
 public/js/jquery.js
+data/scripts/*~
+public/adminer.php
+deployment.properties
+deployment.xml

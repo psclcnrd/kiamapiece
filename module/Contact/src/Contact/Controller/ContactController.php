@@ -24,7 +24,16 @@ use Zend\Mime\Part as MimePart;
 
 class ContactController extends ProjectActionController
 {
+	/**
+	 * Tableau des meta title
+	 * @var unknown
+	 */
+	protected $arrayTitle=array('editContact' => 'meta_title_14','editContactfree' => 'meta_title_15','mention' => 'meta_title_16');
 	
+	/**
+	 * Contact sur personne logger
+	 * @see \Zend\Mvc\Controller\AbstractActionController::indexAction()
+	 */
     public function indexAction()
     {
     	$auth=new AuthenticationService();
