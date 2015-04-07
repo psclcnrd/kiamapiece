@@ -18,3 +18,5 @@ data/scripts/*~
 public/adminer.php
 deployment.properties
 deployment.xml
+config/autoload/doctrine.local.php
+config/autoload/doctrine.local.php.ovh.php

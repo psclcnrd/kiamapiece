@@ -36,21 +36,14 @@ abstract class ProjectActionController extends AbstractActionController {
 	 */
 	protected function getLog() {
 		if ($this->logger===null) {
-			if (getenv("APPLICATION_MODE")!==false) {
-				$dbConfig=array(
+			$config=$this->getServiceLocator()->get('Configuration');
+			$dsn='mysql:host='.$config['doctrine']['connection']['orm_default']['params']['host'].';dbname='.$config['doctrine']['connection']['orm_default']['params']['dbname'];
+			$dbConfig=array(
 					'driver' => 'pdo',
-					'dsn' => 'mysql:host=localhost;dbname=kiamapiece',
-					'username'	=> 'root',
-					'password' => 'g27un9TA'
-				);
-			} else {
-				$dbConfig=array(
-						'driver' => 'pdo',
-						'dsn' => 'mysql:host=mysql51-117.perso;dbname=kiamapie_tmd',
-						'username'	=> 'kiamapie_tmd',
-						'password' => 'ZmhUkN4Ek8Q8'
-				);
-			}
+					'dsn' => $dsn,
+					'username'	=> $config['doctrine']['connection']['orm_default']['params']['user'],
+					'password' => $config['doctrine']['connection']['orm_default']['params']['password']
+			);			
 			$mapping = array(
 					'timestamp' => 'OperationDate',
 					'priority'  => 'Priority',
