@@ -46,9 +46,9 @@ abstract class ProjectActionController extends AbstractActionController {
 			} else {
 				$dbConfig=array(
 						'driver' => 'pdo',
-						'dsn' => 'mysql:host=mysql51-117.perso;dbname=kiamapie_tmd',
-						'username'	=> 'kiamapie_tmd',
-						'password' => 'ZmhUkN4Ek8Q8'
+						'dsn' => 'mysql:host=mysql51-117.perso;dbname=',
+						'username'	=> '',
+						'password' => ''
 				);
 			}
 			$mapping = array(
